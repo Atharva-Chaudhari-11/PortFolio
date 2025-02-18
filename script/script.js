@@ -28,6 +28,8 @@
 //     typeEffect();
 //   });
   
+  
+// dark mode
   const darkModeToggle = document.getElementById("dark-mode-toggle");
   const body = document.body;
   
@@ -36,6 +38,18 @@
       darkModeToggle.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
   });
   
+// hamburger
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const body = document.body;
+
+  hamburger.addEventListener('click', function () {
+    navLinks.classList.toggle('active');
+    body.classList.toggle('menu-open'); // Toggle the push effect
+  });
+});
+
   // Smooth Scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {

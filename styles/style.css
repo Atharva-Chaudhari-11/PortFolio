@@ -18,6 +18,7 @@ body {
   margin-right: 150px;
 }
 /* Navbar */
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
@@ -28,6 +29,7 @@ nav {
   border-radius: 12px;
   margin: 20px auto;
   width: 90%;
+  position: relative; /* Added for positioning the hamburger menu */
 }
 
 /* Logo */
@@ -44,6 +46,7 @@ nav {
   border: 1px solid #a385ff;
   padding: 18px;
   border-radius: 10px;
+  margin: 0; /* Reset default margin */
 }
 
 .nav-links a {
@@ -60,6 +63,60 @@ nav {
   border-radius: 10px;
   box-shadow: 0 0 4px rgb(0, 250, 42);
 }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show hamburger on small screens */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default on small screens */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Position below the navbar */
+    left: 0;
+    background:url('https://plus.unsplash.com/premium_photo-1674048381806-814bb2126f73?q=80&w=2142&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 10px 0;
+    color: black;
+    border: 1px solid #a385ff;
+    z-index: 1; /* Ensure it's above other content */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show nav links when active */
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    display: block; /* Make links full width */
+  }
+}
+
 
 /* Hero Section */
 .hero {
@@ -644,7 +701,7 @@ ul {
 /* Dark Mode Styles */
 .dark-mode {
   background-color: white;
-  color: black;
+  color: rgb(225, 82, 82);
 }
 
 .dark-mode .nav-links a {
